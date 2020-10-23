@@ -6,7 +6,7 @@ on:
     types: [opened, synchronize]
 jobs:
 
-  backendBZ:
+  build:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
@@ -16,7 +16,8 @@ jobs:
     - name: Get color
       run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
 
-  build:
+  frontend-build:
+    needs: build
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
