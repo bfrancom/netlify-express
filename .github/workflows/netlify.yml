@@ -8,9 +8,10 @@ jobs:
 
   backendBZ:
     runs-on: ubuntu-18.04
+    steps:
     - name: Set selected color
-    run: echo '::set-output name=SELECTED_COLOR::green'
-    run: echo 'hi mom!'
+    run: echo '::set-output name=SELECTED_COLOR::green' && echo 'hi mom'
+
   build:
     runs-on: ubuntu-18.04
     steps:
