@@ -10,8 +10,8 @@ jobs:
 #    strategy:
 #      matrix:
 #        node-version: [12.x]
-#    steps:
-#    - uses: actions/checkout@v2
+    steps:
+    - uses: actions/checkout@v2
 #
 #      # ( Build to ./dist or other directory... )
 #    - name: Use Node.js ${{ matrix.node-version }}
