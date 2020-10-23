@@ -5,40 +5,16 @@ on:
   pull_request:
     types: [opened, synchronize]
 jobs:
+
+  backendBZ:
+    runs-on: ubuntu-18.04
+    - name: Set selected color
+    run: echo '::set-output name=SELECTED_COLOR::green'
+    run: echo 'hi mom!'
   build:
     runs-on: ubuntu-18.04
-#    strategy:
-#      matrix:
-#        node-version: [12.x]
     steps:
     - uses: actions/checkout@v2
-#
-#      # ( Build to ./dist or other directory... )
-#    - name: Use Node.js ${{ matrix.node-version }}
-#      uses: actions/setup-node@v1
-#      with:
-#        node-version: ${{ matrix.node-version }}
-#    - name: Install Packages
-#      run: npm install
-#    - name: Build page
-#      run: npm run build
-#
-#3    - name: Deploy to Netlify
-#3      uses: nwtgck/actions-netlify@v1.1
-#3      with:
-#3        publish-dir: './'
-#3        production-branch: master
-#3        github-token: ${{ secrets.GITHUB_TOKEN }}
-#3        deploy-message: "Deploy from GitHub Actions"
-#3        enable-pull-request-comment: false
-#3        enable-commit-comment: true
-#3        overwrites-pull-request-comment: true
-#3        netlify-config-path: './netlify.toml'
-#3      env:
-#3        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-#3        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-#3      run: netlify deploy --dir=public --prod
-#3      timeout-minutes: 1
 
     # Deploy the site with netlify-cli
     - name: Deploy Site
